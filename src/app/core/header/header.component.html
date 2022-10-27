@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mr-5" routerLink="/">
+        It's <img src="../../../assets/images/mmtLogoWhite.png" alt="mmt-logo" width="100px" height="30px"> Fake
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="home/flights">Flights <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="home/hotels">Hotels</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="home/bus">Bus</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="home/train">Train</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="home/taxi"><sup style="font-size: 6px">Fake</sup>Taxi</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <ng-template #loginButtons>
+          <li class="nav-item">
+            <button class="btn btn-dark" (click)="openLoginForm()" data-toggle="modal" data-target="#formModal">Login/SingUp</button>
+          </li>
+        </ng-template>
+        <li class="nav-item text-white bold" *ngIf="ifActive=='active'; else loginButtons">
+          Welcome {{userName}}
+            <button class="btn btn-dark" (click)="logout()">Log Out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
